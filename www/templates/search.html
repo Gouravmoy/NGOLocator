@@ -1,5 +1,20 @@
-<ion-view view-title="Search">
+<ion-view view-title="NGO LOCATOR">
   <ion-content>
-    <h1>Search</h1>
+    <div class="list card">
+      <a href="#" class="item  item-text-wrap item-icon-left">
+        <i class="icon ion-home"></i>
+        Your one click could lead to a road of happy smiles wherever you walk on it. And as you look back on it, you too
+        add a personal touch. ☺
+      </a>
+    </div>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <ion-list>
+          <ion-item ng-repeat="searchType in searchTypes" href="#/app/ngoList/{{searchType.id}}">
+            {{searchType.title}}
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

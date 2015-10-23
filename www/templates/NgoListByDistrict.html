@@ -1,0 +1,35 @@
+<ion-view view-title="NGO SEARCH">
+  <ion-content>
+    <h3>NGOs Search</h3>
+
+    <div class="list">
+
+      <form data-ng-Submit="getNGOsByDist()">
+        <label class="item item-input item-select">
+          Select State<select data-ng-model="stateDtls.stateSelected"
+                              data-ng-options="state.name as state.name for state in stateList"
+                              data-ng-change="getDistByState()">
+        </select>
+        </label>
+        <br>
+        <br>
+        <label class="item item-input item-select">
+          Select District
+          <select data-ng-model="stateDtls.distSelected" data-ng-options="dist for dist in distList"><!--check if correct-->
+          </select>
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Search" class="btn btn-primary pull-right"/>
+      </form>
+    </div>
+
+    <ion-list>
+      <ion-item ng-repeat="ngo in ngoDistList" href="#/app/ngoList/id/{{ngo._id}}">
+        <small>Name:{{ngo.name}}</small>
+        <br>
+        <small>State:{{ngo.abbr}}</small>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

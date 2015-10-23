@@ -1,0 +1,26 @@
+<ion-view view-title="NGO SEARCH">
+  <ion-content>
+
+    <div class="list card">
+      <form ng-submit="getNgoByInterest()">
+        <h3>NGO SEARCH</h3>
+
+        <label class="item item-input">
+          <span class="input-label">NAME</span>
+          <input ng-model="instDtls.interest" type="text" required>
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Search" class="btn btn-primary pull-right"/>
+      </form>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="ngo in ngoInstList" href="#/app/ngoList/id/{{ngo._id}}">
+        <small>Name:{{ngo.name}}</small>
+        <br>
+        <small>State:{{ngo.abbr}}</small>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
